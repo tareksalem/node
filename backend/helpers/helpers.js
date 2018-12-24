@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const handlebars = require("handlebars");
 const crypto = require("crypto");
+global.root_dir = "../../";
 const helpers = {
     hash: function(string) {
         if (typeof string === "string" && string.length > 0) {
@@ -130,7 +131,7 @@ helpers.render = function(options) {
     let container = options.container || "views"
         // container = path.join(baseDir, container);
     container = path.resolve(baseDir, container)
-    let body = options.body ? fs.readFileSync(`${container}/${options.body}`, "utf8") : "<body></body>";
+    let body = options.body ? fs.readFileSync(`${global.root_dir}/${container}/${options.body}`, "utf8") : "<body></body>";
     body = handlebars.compile(body, { strict: true });
     body = body(data);
     data.body = body;
@@ -140,12 +141,12 @@ helpers.render = function(options) {
     if (partials.length > 0) {
         partials.forEach(function(partial) {
             let partialName = path.basename(partial).split(".")[0];
-            var partialFile = fs.readFileSync(`${container}/${partial}`, "utf8");
+            var partialFile = fs.readFileSync(`${global.root_dir}/${container}/${partial}`, "utf8");
             handlebars.registerPartial(partialName, partialFile);
         })
     }
     try {
-        var htmlFile = fs.readFileSync(`${container}/${layout}`, "utf8");
+        var htmlFile = fs.readFileSync(`${global.root_dir}/${container}/${layout}`, "utf8");
         if (htmlFile) {
             htmlFile = handlebars.compile(htmlFile, { strict: true });
             htmlFile = htmlFile(data);
