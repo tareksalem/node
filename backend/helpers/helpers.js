@@ -144,11 +144,16 @@ helpers.render = function(options) {
             handlebars.registerPartial(partialName, partialFile);
         })
     }
-    var htmlFile = fs.readFileSync(`${container}/${layout}`, "utf8");
-    if (htmlFile) {
-        htmlFile = handlebars.compile(htmlFile, { strict: true });
-        htmlFile = htmlFile(data);
-        res.end(htmlFile);
+    try {
+        var htmlFile = fs.readFileSync(`${container}/${layout}`, "utf8");
+        if (htmlFile) {
+            htmlFile = handlebars.compile(htmlFile, { strict: true });
+            htmlFile = htmlFile(data);
+            res.end(htmlFile);
+        }
+    } catch (e) {
+        res.writeHead(302);
+        res.end("");
     }
 }
 helpers.json = function(res, data) {
