@@ -1,0 +1,64 @@
+@import "./settings";
+@import "@material/layout-grid/mdc-layout-grid";
+@import "@material/drawer/mdc-drawer";
+@import "@material/list/mdc-list";
+@import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/fab/mdc-fab";
+@import "../js/components/chat-us/floating-btn/floating-btn.scss";
+@import "@material/card/mdc-card";
+@import "@material/textfield/mdc-text-field";
+@import "@material/button/mdc-button";
+@import "@material/icon-button/mdc-icon-button";
+body {
+    display: flex;
+    height: 100vh;
+}
+
+.mdc-card__action--button {
+    @include mdc-button-filled-accessible($mdc-theme-primary);
+}
+
+.mdc-drawer-app-content {
+    flex: auto;
+    overflow: auto;
+    position: relative;
+}
+
+.main-content {
+    overflow: auto;
+    height: 100%;
+}
+
+.app-bar {
+    position: absolute;
+}
+
+// only apply this style if below top app bar
+.mdc-top-app-bar {
+    z-index: 7;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+.mdc-drawer-app-content {
+    flex: auto;
+    overflow: auto;
+    position: relative;
+}
+
+.main-content {
+    overflow: auto;
+    height: 100%;
+}
+
+.app-bar {
+    position: absolute;
+}
+
+// only apply this style if below top app bar
+.mdc-top-app-bar {
+    z-index: 7;
+}

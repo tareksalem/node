@@ -1,0 +1,9 @@
+{
+    "ignore": [
+        "bundle.js"
+    ],
+    "events": {
+        "restart": "npx webpack --config webpack.config.js"
+    },
+    "ext": "js, scss"
+}

@@ -1,0 +1,24 @@
+@import "../../../../styles/settings.scss";
+container-chat-us {
+    position: fixed;
+    right: 10px;
+    bottom: 30px;
+    display: block;
+    z-index: 10;
+}
+
+floating-btn {
+    display: block;
+    position: relative;
+}
+
+floating-btn .mdc-fab {
+    position: relative;
+    right: 50px;
+    float: right;
+    @include mdc-fab-accessible($mdc-theme-primary);
+}
+
+#send-message-btn {
+    @include mdc-fab-accessible($mdc-theme-primary);
+}

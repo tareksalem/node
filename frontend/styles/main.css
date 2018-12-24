@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+:root {
+    --mdc-theme-background: red;
+    --main-bgn-color: #303f9f;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    height: auto;
+}
+
+#page-wrapper {
+    width: 100%;
+    position: relative;
+    top: 0;
+}
+
+
+/* header style */
+
+.navigation-link {
+    padding: 10px;
+}
+
+.navigation-link:hover {
+    transition: all .5s ease-in-out;
+    background: #c8cce463;
+}
+
+
+/* end header style */
+
+
+/* style of floating btn */
+
+container-chat {
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 350px;
+    box-shadow: 1px 1px 33px -1px #cecece !important;
+}
+
+
+/* end style of floating btn */
+
+.text-center {
+    text-align: center;
+}
+
+.mdc-text-field {
+    margin-bottom: 50px;
+}
+
+#particles-js {
+    height: 700px;
+    width: 100%;
+    background: var(--main-bgn-color);
+    opacity: .8;
+}
+
+.header {
+    background-image: url(../images/header1.jpg);
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.header-text {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.main-section {
+    display: block;
+    width: 95%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.mdc-card__media--square::before {
+    margin-top: 50px;
+}
+
+.our-solutions .material-icons {
+    font-size: 60px;
+}
+
+.our-solutions .material-icons.web-icon {
+    color: var(--main-bgn-color);
+}
+
+.our-solutions .material-icons.android-icon {
+    color: palevioletred;
+}
+
+.our-solutions .material-icons.desktop-icon {
+    color: gold;
+}
+
+.main-section h1 {
+    border-bottom: 3px solid var(--main-bgn-color);
+    width: 150px;
+    margin: 50px auto;
+}
