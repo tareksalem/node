@@ -3,7 +3,7 @@ const http = require("http");
 Grandjs.setConfig({
     port: process.env.PORT || 8000,
     http: http,
-    staticFolder: "../frontend",
+    staticFolder: "frontend",
     session: true,
     ENCRYPTION_KEY: "ncryptiontestforencryptionproces",
     setCookie: {

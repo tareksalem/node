@@ -8,8 +8,8 @@ Grandjs.use({
                 data: {
                     title: "hello app"
                 },
-                container: "../../views",
-                layout: "../../views/layouts/layout.html"
+                container: "views",
+                layout: "views/layouts/layout.html"
             })
         }
     }

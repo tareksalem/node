@@ -173,7 +173,7 @@ helpers.sendFile = function(req, res, file) {
         ".txt": "text/text",
         ".xml": "text/xml"
     };
-    var fileSource = path.join(__dirname, file);
+    var fileSource = path.join(__dirname, global.root_dir + file);
     fs.exists(fileSource, function(exist) {
         if (exist) {
             var headers = { "content-type": mimeTypes[path.extname(file)] };
@@ -209,7 +209,7 @@ helpers.staticFiles = function(req, res, pathname, staticFolder, errorPage, info
         ".opus": "audio/ogg",
     };
     // staticFolder = staticFolder !== staticFolder ? staticFolder : "";
-    var dirName = path.join(__dirname, `../${sourceFolder}`);
+    var dirName = path.join(__dirname, `${global.root_dir}/${sourceFolder}`);
     var fileSource = path.join(dirName, pathname);
     console.log(fileSource)
     var existFile = fs.existsSync(fileSource);
