@@ -141,7 +141,7 @@ helpers.render = function(options) {
     if (partials.length > 0) {
         partials.forEach(function(partial) {
             let partialName = path.basename(partial).split(".")[0];
-            var partialFile = fs.readFileSync(`${global.root_dir}/${container}/${partial}`, "utf8");
+            var partialFile = fs.readFileSync(`${global.root_dir}${container}/${partial}`, "utf8");
             handlebars.registerPartial(partialName, partialFile);
         })
     }

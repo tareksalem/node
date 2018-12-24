@@ -9,7 +9,7 @@ Grandjs.use({
                     title: "hello app"
                 },
                 container: "views",
-                layout: "/layouts/layout.html"
+                layout: "layouts/layout.html"
             })
         }
     }
