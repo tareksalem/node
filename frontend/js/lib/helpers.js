@@ -50,7 +50,7 @@ ActiveHelpers.component.style = (self, componentElement) => {
                     componentElement.style[objStyle] = style[el][objStyle];
                 });
             } else if (el == 'parent') {
-                let cssElement = self.options.parent;
+                let cssElement = self.parent;
                 Object.keys(style[el]).forEach(function(objStyle) {
                     cssElement.style[objStyle] = style[el][objStyle];
                 });
