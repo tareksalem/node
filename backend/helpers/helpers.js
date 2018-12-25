@@ -131,7 +131,7 @@ helpers.render = function(options) {
     let container = options.container || "views"
         // container = path.join(baseDir, container);
         // container = path.resolve(, container)
-    let body = options.body ? fs.readFileSync(`${process.env.PWD}/${container}/${options.body}`, "utf8") : "<body></body>";
+    let body = options.body ? fs.readFileSync(`${container}/${options.body}`, "utf8") : "<body></body>";
     body = handlebars.compile(body, { strict: true });
     body = body(data);
     data.body = body;
@@ -141,12 +141,13 @@ helpers.render = function(options) {
     if (partials.length > 0) {
         partials.forEach(function(partial) {
             let partialName = path.basename(partial).split(".")[0];
-            var partialFile = fs.readFileSync(`${process.env.PWD}${container}/${partial}`, "utf8");
+            var partialFile = fs.readFileSync(`${container}/${partial}`, "utf8");
             handlebars.registerPartial(partialName, partialFile);
         })
     }
+    console.log(process.env.PWD )
     // try {
-    var htmlFile = fs.readFileSync(`${process.env.PWD}/${container}/${layout}`, "utf8");
+    var htmlFile = fs.readFileSync(`${container}/${layout}`, "utf8");
     if (htmlFile) {
         htmlFile = handlebars.compile(htmlFile, { strict: true });
         htmlFile = htmlFile(data);
@@ -209,7 +210,7 @@ helpers.staticFiles = function(req, res, pathname, staticFolder, errorPage, info
         ".opus": "audio/ogg",
     };
     // staticFolder = staticFolder !== staticFolder ? staticFolder : "";
-    var dirName = path.join(process.env.PWD, `${sourceFolder}`);
+    var dirName = path.join("", `${sourceFolder}`);
     var fileSource = path.join(dirName, pathname);
     console.log(fileSource)
     var existFile = fs.existsSync(fileSource);
