@@ -1,7 +1,7 @@
 const Grandjs = require("./backend/Grand");
 const http = require("http");
 Grandjs.setConfig({
-    port: process.env.PORT || 8000,
+    port: process.env.PORT || 80,
     http: http,
     staticFolder: "frontend",
     session: true,
